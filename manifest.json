@@ -1,0 +1,55 @@
+{
+  "name": "DMAX Fullscreen",
+  "version": "0.0.3",
+  "manifest_version": 2,
+  "description": "This extension allows the user to use the fullscreen mode of the default html5 player on dmax.de",
+  "homepage_url": "https://github.com/okou/dmax-fullscreen/",
+  "author": "okou",
+  "icons": {
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "browser_action": {
+    "default_icon": "icons/icon32.png",
+    "default_title": "DMAX Fullscreen settings",
+    "default_popup": "src/browser_action/browser_action.html"
+  },
+  "permissions": [
+    "http://dmax.de/*",
+    "https://dmax.de/*",
+    "http://www.dmax.de/*",
+    "https://www.dmax.de/*",
+    "storage"
+  ],
+  "background": {
+    "scripts": ["src/libs/jquery-3.2.1.min.js", "src/browser_action/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://dmax.de/*",
+        "https://dmax.de/*",
+        "http://www.dmax.de/*",
+        "https://www.dmax.de/*"
+      ],
+      "css": [
+        "src/inject/inject.css"
+      ]
+    },
+    {
+      "matches": [
+        "http://dmax.de/*",
+        "https://dmax.de/*",
+        "http://www.dmax.de/*",
+        "https://www.dmax.de/*"
+      ],
+      "js": [
+        "src/libs/jquery-3.2.1.min.js",        
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}

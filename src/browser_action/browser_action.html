@@ -1,0 +1,105 @@
+<!doctype html>
+<style type="text/css">
+
+	body {
+		padding: 0;
+		margin: 0;
+	}
+
+	#dmaxFullscreenPopup {
+		height: 200px;
+		width: 350px;
+		font-family: Helvetica, Ubuntu, Arial, sans-serif;
+		font-size: 11pt;
+	}
+
+	#dmaxFullscreenPopup .header {
+		width: 100%;
+		height: 48px;
+		padding: 0em 0.5em;
+		box-sizing: border-box;
+		background-color: #dc5014;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	#dmaxFullscreenPopup .title {
+		font-size: 1.2em;
+		color: #fafafa;
+	}
+
+	#dmaxFullscreenPopup .github-icon {
+		width: 24px;
+		height: 24px;
+		background-image: url(/assets/github.png);
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+
+	#dmaxFullscreenPopup .github-icon:hover {
+		opacity: 0.8;
+		transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	}
+
+	#dmaxFullscreenPopup .content {
+		padding: 0.5em 0.5em;
+		box-sizing: border-box;
+	}
+
+	#dmaxFullscreenPopup .text {
+		color: #888888;
+		font-size: 0.9em;
+		line-height: 150%;
+		text-align: center;
+		padding-bottom: 0.5em;
+		border-bottom: 1px solid #dadada;
+	}
+
+	#dmaxFullscreenPopup .donation {
+		color: #444444;
+		font-size: 0.9em;
+		line-height: 150%;
+		text-align: center;
+		padding-top: 2em;
+		padding-bottom: 2em;
+		border-bottom: 1px solid #dadada;
+	}
+
+	#dmaxFullscreenPopup .settings {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		color: #888888;
+		font-size: 0.9em;
+		line-height: 150%;
+		text-align: center;
+		padding-bottom: 0.5em;
+		border-bottom: 1px solid #dadada;
+	}
+
+</style>
+
+<div id="dmaxFullscreenPopup">
+	<div class="header">
+		<div class="title">DMAX Fullscreen</div>
+		<a href="https://github.com/okou/dmax-fullscreen/" class="github-icon" title="Link zur GitHub Seite" target="_blank"></a>
+	</div>
+	<div class="content">
+		<div class="text">Danke f&uuml;r das benutzen meiner Chrome Extension. Bugs/Verbesserungen k&ouml;nnen auf der GitHub Seite eingereicht werden.<br>&Uuml;ber eine Spende w&uuml;rde ich mich sehr freuen!</div>
+		<div class="donation">
+			<b>ETH:</b> 0x377c434591b5f9340da7fc083e673017ebf95de7 <br><br>
+			<b>DASH:</b> XtWDvpkAdubvt1GjBoWuAaLuHFKAXCvJt5 <br><br>
+			<b>LTC:</b> 3GEeVpPVRfAMrUZ2UggjnSgV1jo3LGLQoc
+		</div>		
+	</div>
+	<div class="settings">
+		<label for="fullscreenState">Fullscreen Modus aktiv</label>
+		<input id="fullscreenState" type="checkbox">
+	</div>
+</div>
+<script src="/src/libs/jquery-3.2.1.min.js"></script>
+<script src="/src/browser_action/background.js"></script>
